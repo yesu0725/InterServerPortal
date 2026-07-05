@@ -1,0 +1,9 @@
+# Build output
+src/bin/
+src/obj/
+
+# Packaged Thunderstore archives (built by `-t:PackThunderstore`)
+dist/
+
+# The DLL refreshed into the package folder on each build (static files are tracked)
+Thunderstore files/InterServerPortal/InterServerPortal.dll
