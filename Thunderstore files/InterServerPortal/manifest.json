@@ -1,7 +1,7 @@
 {
   "name": "InterServerPortal",
   "description": "Portal to your own local world from a dedicated server and back — no logout/relog. Plus same-world portal networks: mesh all your portals so you can hop between any of them. Entry codes, vanilla assets only.",
-  "version_number": "0.8.0",
+  "version_number": "0.9.0",
   "website_url": "https://github.com/yesu0725/InterServerPortal",
   "dependencies": [
     "denikson-BepInExPack_Valheim-5.4.2333",

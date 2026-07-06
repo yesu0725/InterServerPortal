@@ -23,7 +23,7 @@ namespace InterServerPortal
     {
         public const string PluginGuid = "com.interserverportal";
         public const string PluginName = "InterServerPortal";
-        public const string PluginVersion = "0.8.0";
+        public const string PluginVersion = "0.9.0";
 
         internal static Plugin Instance { get; private set; }
         internal static ManualLogSource Log { get; private set; }
@@ -57,7 +57,7 @@ namespace InterServerPortal
             _harmony = new Harmony(PluginGuid);
             _harmony.PatchAll();
 
-            Log.LogInfo($"{PluginName} v{PluginVersion} loaded (Phase 8 — same-world portal networks).");
+            Log.LogInfo($"{PluginName} v{PluginVersion} loaded (Phase 9 — per-mode portal glow + Discord travel notify).");
         }
 
         private void Update()

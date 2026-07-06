@@ -2,7 +2,7 @@
 
 Development log for InterServerPortal. Newest first.
 
-## Unreleased — per-mode portal glow + Discord travel notify
+## 0.9.0 — per-mode portal glow + Discord travel notify (2026-07-05)
 
 ### Added — Discord notification
 - `src/Net/DiscordNotifier.cs` + **`Discord/WebhookUrl`** config: when a webhook URL

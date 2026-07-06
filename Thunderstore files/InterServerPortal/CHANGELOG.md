@@ -1,12 +1,7 @@
 # Changelog
 
-## 0.8.0 — Networks, per-mode glow & Discord
+## 0.9.0 — Per-mode portal glow & Discord
 
-- **New: portal networks.** Set a portal's link mode to **Network** and it meshes
-  with every other network-mode portal you built in that world. Walk through one to
-  pick any of the others from a menu and teleport there — an ordinary in-world
-  teleport, no loading screen. Works alongside vanilla 1:1 tag pairing (your other
-  portals are unaffected). Works in single-player and on dedicated servers.
 - **New: per-mode portal glow.** Each portal now glows a colour for its mode —
   vanilla tag = blue, network = **violet**, inter-server = **cyan** — and, like a
   vanilla portal, only lights up when it's actually connected/usable (a lone
@@ -15,6 +10,14 @@
   shader can't be recoloured.)
 - **New: optional Discord notification.** Set `Discord/WebhookUrl` in the config
   and a message is posted whenever you cross from a server into your local world.
+
+## 0.8.0 — Same-world portal networks
+
+- **New: portal networks.** Set a portal's link mode to **Network** and it meshes
+  with every other network-mode portal you built in that world. Walk through one to
+  pick any of the others from a menu and teleport there — an ordinary in-world
+  teleport, no loading screen. Works alongside vanilla 1:1 tag pairing (your other
+  portals are unaffected). Works in single-player and on dedicated servers.
 - **Removed the item-policy setting.** `portal_wood` and `portal_stone` now keep
   their fixed vanilla item restrictions (wood blocks ore, stone carries it) with no
   override — simpler and predictable.

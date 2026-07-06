@@ -16,7 +16,7 @@ world → load → relog cycle with a single portal interaction.
 | Field | Value |
 |---|---|
 | GUID | `com.interserverportal` |
-| Version | `0.8.0` (Phase 8 — same-world portal networks; removed the item-policy override and the travel hotkeys) + unreleased Phase 9 work (per-mode portal glow, Discord travel notify) |
+| Version | `0.9.0` (Phase 9 — per-mode portal glow + Discord travel notify) on top of Phase 8 (same-world portal networks; removed the item-policy override and the travel hotkeys) |
 | Framework | net48 |
 | BepInEx dep | `5.x` (HarmonyX included) — denikson BepInExPack_Valheim 5.4.2333 |
 | Jötunn dep | `[BepInDependency(Jotunn.Main.ModGuid)]` — 2.25.0 |
@@ -26,6 +26,9 @@ world → load → relog cycle with a single portal interaction.
 
 > **Status:** Phases 0–8 done and confirmed in-game (Phase 8 = same-world portal
 > networks + the two revisions below, Tests V–Z incl. the dedicated-server RPC path).
+> Phase 9 (v0.9.0 — per-mode portal glow + Discord travel notify) is built and
+> deployed; the glow/vortex colours and the server→local Discord post are confirmed
+> in-game (the outward flame burst is left orange by design).
 > **alt-use** opens a native Jötunn config panel (inter-server flag, a
 > **Link-mode** button Tag-pair/Network, add/remove inter-server destinations, and a
 > Lock section for a per-portal entry code). **Walking through** a portal branches by
@@ -40,13 +43,13 @@ world → load → relog cycle with a single portal interaction.
 > by the vanilla piece `creator`; the list comes from `ZDOMan.GetPortals()` locally
 > when hosting, else a routed RPC to the dedicated server. Local→local hops work; a
 > local world's portal offers "Return to origin server". **Travel is portals-only**
-> (the F8/F9 hotkeys were removed). **Per-mode portal glow** (unreleased): each mode
-> has a distinct emission + swirl-vortex colour (vanilla blue / network violet /
+> (the F8/F9 hotkeys were removed). **Per-mode portal glow** (Phase 9 / v0.9.0): each
+> mode has a distinct emission + swirl-vortex colour (vanilla blue / network violet /
 > inter-server cyan) that shows active-vs-dark just like a vanilla portal; the
 > outward `blue flames` burst stays orange by design (its gradient-mapped shader
 > bakes colour into a texture and exposes no colour input). **Discord travel notify**
-> (unreleased): with `Discord/WebhookUrl` set on the client, a server→local crossing
-> posts to Discord. Deferred: named arrival points (world-spawn only), `ISP.group`
+> (Phase 9 / v0.9.0): with `Discord/WebhookUrl` set on the client, a server→local
+> crossing posts to Discord. Deferred: named arrival points (world-spawn only), `ISP.group`
 > cross-portal / shared networks. Next: the manual Thunderstore upload
 > (`dist/InterServerPortal-<version>.zip`) whenever you're ready to publish. See
 > [docs/Roadmap-Phases.md](docs/Roadmap-Phases.md).
