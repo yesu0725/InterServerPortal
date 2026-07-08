@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.9.1 — Icon refresh
+
+- Updated the mod icon.
+- No gameplay changes. (Note: the glowing rune characters on the portal frame
+  keep their vanilla colour — that colour is baked into the portal's texture and
+  can't be re-tinted, the same as the orange flame burst. The frame glow, swirl
+  vortex, sparks and lights still carry the per-mode colour.)
+
 ## 0.9.0 — Per-mode portal glow & Discord
 
 - **New: per-mode portal glow.** Each portal now glows a colour for its mode —

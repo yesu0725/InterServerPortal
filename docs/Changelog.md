@@ -2,6 +2,26 @@
 
 Development log for InterServerPortal. Newest first.
 
+## 0.9.1 — icon refresh + rune-recolour finding (2026-07-08)
+
+Packaging/documentation patch; no gameplay code change (the DLL is functionally
+identical to 0.9.0).
+
+### Changed
+- Refreshed the Thunderstore package `icon.png`.
+
+### Documented — portal frame runes can't be recoloured
+- Investigated recolouring the glowing rune/glyph characters on the portal frame
+  to the mode hue. A runtime material dump (added behind `DebugLogging`, then
+  removed) confirmed the runes are drawn from the frame material's **emission
+  texture** (`portal_small` / `Standard`, `_EmissionMap = portal_small_e`), tinted
+  only by `_EmissionColor` — which the frame glow already drives. Multiplying a
+  baked-colour texture by the mode hue can't shift its colour, so the runes are
+  **left as vanilla** — the same limitation already documented for the `blue
+  flames` burst. A mesh-material retint pass was prototyped and reverted (it found
+  `emissive rune mats=0`). `src/Portal/PortalVisuals.cs` is unchanged from 0.9.0.
+  See [Feature-Portal-Visuals](Feature-Portal-Visuals.md).
+
 ## 0.9.0 — per-mode portal glow + Discord travel notify (2026-07-05)
 
 ### Added — Discord notification

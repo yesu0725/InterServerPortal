@@ -68,6 +68,30 @@ mode hue, keep alpha, swap into the instanced material) was implemented and
 modes** by design; the frame glow, inner vortex, sparks and lights carry the mode
 colour.
 
+### Known limitation — the frame **runes** keep their vanilla colour
+
+The glowing rune/glyph characters carved into the portal frame **cannot be
+recoloured** to the mode hue, for the same class of reason as the flame burst.
+
+A runtime material dump (v0.9.1) confirmed the runes are not a separate tintable
+element: on `portal_wood` the frame material `portal_small` (shader `Standard`,
+`_EMISSION` keyword) draws them from its **emission texture** `_EmissionMap =
+portal_small_e`, and the only colour input is `_EmissionColor` — which the frame
+glow already drives. Multiplying a texture whose rune pixels already carry the
+colour can't shift the hue (a red texel × any tint stays in the red channel), so
+setting `_EmissionColor` to the mode hue can dim/brighten the runes but never
+change their colour. `portal_stone` behaves the same way.
+
+An extra pass that captured every `MeshRenderer` emissive material and folded it
+into the retint list was tried (v0.9.1) and **reverted** — it found no separately
+tintable rune material (`emissive rune mats=0`), confirming the colour lives in
+the baked texture. Recolouring would require rewriting the emission texture
+per-portal, the same invasive route rejected for the flame burst.
+
+> Note: a "plain" portal that appears to have bright red runes is usually a
+> **tag-paired vanilla portal** showing vanilla's own `m_colorTargetfound`
+> connected glow — a mode the mod deliberately leaves untouched.
+
 > Diagnosing shaders: a one-time dump of each portal particle system's shader and
 > full material property list was used to find the above; it was removed once the
 > gradient-mapped shader was identified. Re-add a temporary dump behind

@@ -16,7 +16,7 @@ world → load → relog cycle with a single portal interaction.
 | Field | Value |
 |---|---|
 | GUID | `com.interserverportal` |
-| Version | `0.9.0` (Phase 9 — per-mode portal glow + Discord travel notify) on top of Phase 8 (same-world portal networks; removed the item-policy override and the travel hotkeys) |
+| Version | `0.9.1` (Phase 9 — per-mode portal glow + Discord travel notify; 0.9.1 = icon refresh + documented that the frame runes can't be recoloured) on top of Phase 8 (same-world portal networks; removed the item-policy override and the travel hotkeys) |
 | Framework | net48 |
 | BepInEx dep | `5.x` (HarmonyX included) — denikson BepInExPack_Valheim 5.4.2333 |
 | Jötunn dep | `[BepInDependency(Jotunn.Main.ModGuid)]` — 2.25.0 |
@@ -28,7 +28,12 @@ world → load → relog cycle with a single portal interaction.
 > networks + the two revisions below, Tests V–Z incl. the dedicated-server RPC path).
 > Phase 9 (v0.9.0 — per-mode portal glow + Discord travel notify) is built and
 > deployed; the glow/vortex colours and the server→local Discord post are confirmed
-> in-game (the outward flame burst is left orange by design).
+> in-game (the outward flame burst is left orange by design). **v0.9.1** (icon
+> refresh; no gameplay code change) additionally confirmed **in-game** that the
+> glowing frame **runes** can't be recoloured — their colour is baked into the
+> portal's emission texture and only `_EmissionColor`-multiplied, so they're left
+> vanilla like the flame burst (a mesh-material retint pass was prototyped and
+> reverted).
 > **alt-use** opens a native Jötunn config panel (inter-server flag, a
 > **Link-mode** button Tag-pair/Network, add/remove inter-server destinations, and a
 > Lock section for a per-portal entry code). **Walking through** a portal branches by
